@@ -1,0 +1,11 @@
+<div class="container">
+    <input type="button" class="back-btn" value="&lt; Back" @click="goBack" />
+
+    <text class="title">Add Caffeine</text>
+
+    <input type="button" class="caffeine-btn" value="Espresso (80 mg)" @click="addEspresso" />
+    <input type="button" class="caffeine-btn" value="Latte (120 mg)" @click="addLatte" />
+    <input type="button" class="caffeine-btn" value="Americano (95 mg)" @click="addAmericano" />
+    <input type="button" class="caffeine-btn" value="Cappuccino (110 mg)" @click="addCappuccino" />
+    <input type="button" class="custom-btn" value="Custom" @click="goCustom" />
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+
+    <input type="button" class="back-btn" value="&lt; Back" @click="goBack" />
+    <text class="title">Custom Caffeine</text>
+
+    <div class="adjust-row">
+        <input type="button" class="adjust-btn" value="-" @click="decreaseCaffeine" />
+        <text class="caffeine-text" id="caffeineValue">{{ caffeine }} mg</text>
+        <input type="button" class="adjust-btn" value="+" @click="increaseCaffeine" />
+    </div>
+    <input type="button" class="add-btn" value="Add" @click="addCaffeine" />
+</div>

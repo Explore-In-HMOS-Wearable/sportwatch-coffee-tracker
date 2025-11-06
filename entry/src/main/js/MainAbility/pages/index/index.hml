@@ -1,0 +1,7 @@
+<div class="container">
+    <text class="today">{{ todayTotal }} mg</text>
+    <text class="subtitle">caffeine today</text>
+    <canvas ref="canvas1" style="width: 300px; height: 200px; background-color: #fff7e8;"></canvas>
+
+    <input type="button" class="add-btn" value="+" @click="goAddPage" />
+</div>
