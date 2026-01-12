@@ -1,4 +1,4 @@
-import router from '@system.router'
+import router from '@ohos.router'
 import { storeCaffeine } from '../../common/utils/storageManager'
 
 
@@ -22,14 +22,16 @@ export default {
         this.$apply()
     },
     decreaseCaffeine() {
-        if (this.caffeine > 0) this.caffeine -= 10
+        if (this.caffeine > 0) {
+            this.caffeine -= 10
+        }
         this.$apply()
     },
 
     addCaffeine() {
         storeCaffeine(this.caffeine, (success) => {
             if (success) {
-                console.log(`Added ${this.caffeine} mg caffeine.`)
+                console.info(`Added ${this.caffeine} mg caffeine.`)
                 router.replace({
                     uri: 'pages/index/index'
                 })

@@ -1,9 +1,9 @@
-import router from '@system.router'
+import router from '@ohos.router'
 import { storeCaffeine } from '../../common/utils/storageManager'
 
 export default {
     onInit() {
-        console.log('AddCaffeine page loaded')
+        console.info('AddCaffeine page loaded')
     },
 
     goBack() {
@@ -34,7 +34,7 @@ export default {
     addCaffeineAmount(amount) {
         storeCaffeine(amount, (success) => {
             if (success) {
-                console.log(`Added ${amount}mg caffeine.`)
+                console.info(`Added ${amount}mg caffeine.`)
                 router.replace({
                     uri: 'pages/index/index'
                 })

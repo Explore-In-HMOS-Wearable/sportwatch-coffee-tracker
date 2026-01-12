@@ -1,4 +1,4 @@
-import router from '@system.router'
+import router from '@ohos.router'
 import { getLast7Days, storeCaffeine } from '../../common/utils/storageManager'
 
 export default {
@@ -14,7 +14,6 @@ export default {
     loadData() {
         getLast7Days((data) => {
             this.caffeineData = data
-            console.log(data)
             this.todayTotal = data[data.length - 1]
             //this.$apply() // update UI
             this.drawGraph()
@@ -39,7 +38,7 @@ export default {
         const rightSpace = 15
 
         // Draw horizontal grid lines + labels
-        const supportLineSize = maxVal == 1 ? 0 : 4
+        const supportLineSize = maxVal === 1 ? 0 : 4
 
         const spaceSize = (h-60)/supportLineSize
 
@@ -67,8 +66,12 @@ export default {
         data.forEach((v, i) => {
             const x = leftSpace + i * stepX
             const y = h - 30 - (v / maxVal) * (h - 60)
-            if (i === 0) ctx.moveTo(x, y)
-            else ctx.lineTo(x, y)
+            if (i === 0) {
+                ctx.moveTo(x, y)
+            }
+            else {
+                ctx.lineTo(x, y)
+            }
         })
         ctx.stroke()
 

@@ -1,7 +1,7 @@
 import storage from '@system.storage'
 
-const PREFERENCE_PREFIX = 'caffeine_usage_'  // Key prefix for stored days
-const MAX_DAYS = 7  // Keep only last 7 days
+const PREFERENCE_PREFIX = 'caffeine_usage_' // Key prefix for stored days
+const MAX_DAYS = 7 // Keep only last 7 days
 
 function getDateKey(date) {
     return date.toISOString().slice(0, 10)
@@ -27,10 +27,14 @@ function setValue(key, value, callback) {
         key: key,
         value: String(value),
         success: function () {
-            if (callback) callback(true)
+            if (callback) {
+                callback(true)
+            }
         },
         fail: function () {
-            if (callback) callback(false)
+            if (callback) {
+                callback(false)
+            }
         }
     })
 }
@@ -40,10 +44,14 @@ function deleteValue(key, callback) {
     storage.delete({
         key: key,
         success: function () {
-            if (callback) callback(true)
+            if (callback) {
+                callback(true)
+            }
         },
         fail: function () {
-            if (callback) callback(false)
+            if (callback) {
+                callback(false)
+            }
         }
     })
 }
@@ -81,10 +89,14 @@ export function storeCaffeine(amount, callback) {
         setValue(todayKey, newValue, (ok) => {
             if (ok) {
                 cleanupOldData(today, () => {
-                    if (callback) callback(true)
+                    if (callback) {
+                        callback(true)
+                    }
                 })
             } else {
-                if (callback) callback(false)
+                if (callback) {
+                    callback(false)
+                }
             }
         })
     })
@@ -100,5 +112,7 @@ function cleanupOldData(today, callback) {
 
         deleteValue(key)
     }
-    if (callback) callback()
+    if (callback) {
+        callback()
+    }
 }

@@ -13,7 +13,7 @@
 # Use Cases
 
 Tracking daily caffeine usage
-# Technology Stack
+# Tech Stack
 **Languages**: ArkTS, ArkUI  
 **Frameworks**: HarmonyOS SDK 5.0.0(12)
 **Tools**: DevEco Studio 6.0.0  
